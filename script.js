@@ -8,7 +8,6 @@ document.getElementById("salaryForm").addEventListener("submit", function(event)
         alert("Por favor, ingresa un salario válido.");
         return;
     }
-    
     // Calcular el descuento ISSS (máximo $30)
     let isss = Math.min(salary * 0.03, 30);
 
