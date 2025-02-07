@@ -6,6 +6,7 @@
     <title>Calculadora de Salarios - El Salvador</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Calculadora de Salarios</h1>
@@ -53,10 +54,14 @@
                     <p><strong>Descuentos Totales:</strong> <span id="totalDeductions"></span></p>
                     <p><strong>Salario Líquido:</strong> <span id="netSalary"></span></p>
                 </div>
+                
+                <button type="button" id="generateExcelBtn">Generar Excel</button>
             </form>
         </div>
     </div>
 
+    <!-- Cargar la librería de SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

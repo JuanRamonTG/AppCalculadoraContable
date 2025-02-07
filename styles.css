@@ -48,6 +48,7 @@ input[type="text"], input[type="number"] {
     width: 100%;
 }
 
+
 button {
     padding: 12px;
     background-color: #28a745;
@@ -75,31 +76,52 @@ input[type="number"] {
 button:hover {
     background-color: #218838;
 }
+#resultForm h2 {
+    margin-left: 18px; /* Ajusta el valor para el desplazamiento */
+}
+
 
 .result-section {
-    padding: 15px;
+    padding: 13.1px; /* 3% menos que el valor anterior de 13.5px */
     background-color: #f9f9f9;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
 }
 
 .result-section h3 {
     text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.05em; /* 3% menos que el valor anterior de 1.08em */
+    margin-bottom: 8.7px; /* 3% menos que el valor anterior de 9px */
     color: #333;
+    margin-left: 20px;
 }
 
 .result-section p {
-    margin: 5px 0;
-    font-size: 1.1em;
+    margin: 4.35px 0; /* 3% menos que el valor anterior de 4.5px */
+    font-size: 0.97em; /* 3% menos que el valor anterior de 1em */
+    margin-left: 20px;
 }
 
 .result-section span {
     font-weight: bold;
     color: #007BFF;
 }
+
+#generateExcelBtn {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 79px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 60%;
+    margin-top: 2px; /* Esto baja el botón un poco */
+    margin-left: 100px;
+}
+
 
 
 
