@@ -3,8 +3,13 @@ document.getElementById("salaryForm").addEventListener("submit", function(event)
     
     // Obtén el sueldo
     let salary = parseFloat(document.getElementById("salary").value);
+
+    if (isNaN(salary) || salary <= 0) {
+        alert("Por favor, ingresa un salario válido.");
+        return;
+    }
     
-    // Calcular el descuento ISSS
+    // Calcular el descuento ISSS (máximo $30)
     let isss = Math.min(salary * 0.03, 30);
 
     // Calcular el descuento AFP
@@ -23,8 +28,8 @@ document.getElementById("salaryForm").addEventListener("submit", function(event)
     }
 
     // Calcular descuentos patronales
-    let afpPatronal = salary * 0.0875;
-    let isssPatronal = salary * 0.075;
+    let afpPatronal = salary * 0.0875; // 8.75%
+    let isssPatronal = salary > 1000 ? 75 : salary * 0.075; // ISSS patronal con límite de $75
 
     // Cálculos Totales
     let isssTotal = isss + isssPatronal;
