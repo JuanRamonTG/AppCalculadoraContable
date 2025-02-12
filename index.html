@@ -22,7 +22,7 @@
                 <label for="position">Cargo:</label>
                 <input type="text" id="position" required>
                 <label for="salary">Sueldo:</label>
-                <input type="number" id="salary" required>
+                <input type="number" id="salary" min="0" step="any" required>
 
                 <button type="submit">Calcular</button>
             </form>
@@ -34,7 +34,8 @@
                     <h3>Descuentos Personales</h3>
                     <p><strong>AFP:</strong> <span id="afp"></span></p>
                     <p><strong>ISSS:</strong> <span id="isss"></span></p>
-                    <p><strong>Renta:</strong> <span id="renta"></span></p>
+                    <p><strong>ISR:</strong> <span id="renta"></span></p>
+                    <p><strong>Sueldo Gravado:</strong> <span id="sueldoGravado"></span></p>
                 </div>
 
                 <div class="result-section">

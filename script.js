@@ -2,12 +2,12 @@ document.getElementById("salaryForm").addEventListener("submit", function(event)
     event.preventDefault();
     
     // Obtén el sueldo
-    let salary = parseFloat(document.getElementById("salary").value);
-
+    let salary = parseFloat(document.getElementById("salary").value.replace(",", "."));
     if (isNaN(salary) || salary <= 0) {
         alert("Por favor, ingresa un salario válido.");
         return;
     }
+    
     // Calcular el descuento ISSS (máximo $30)
     let isss = Math.min(salary * 0.03, 30);
 
@@ -47,6 +47,9 @@ document.getElementById("salaryForm").addEventListener("submit", function(event)
     document.getElementById("totalDeductions").textContent = totalDeductions.toFixed(2);
     document.getElementById("netSalary").textContent = netSalary.toFixed(2);
 
+    // Mostrar el sueldo gravado
+    document.getElementById("sueldoGravado").textContent = sueldoGravado.toFixed(2);
+
     // Mostrar el formulario de resultados
     document.getElementById("resultForm").style.display = "block";
 });
@@ -67,12 +70,13 @@ document.getElementById("generateExcelBtn").addEventListener("click", function()
     const afpTotal = document.getElementById("afpTotal").textContent;
     const totalDeductions = document.getElementById("totalDeductions").textContent;
     const netSalary = document.getElementById("netSalary").textContent;
+    const sueldoGravado = document.getElementById("sueldoGravado").textContent;
 
     // Crear una hoja de trabajo de Excel
     const wb = XLSX.utils.book_new();
     const ws_data = [
-        ["Nombre", "Apellido", "Cargo", "Sueldo", "AFP", "ISSS", "Renta", "AFP Patronal", "ISSS Patronal", "ISSS Total", "AFP Total", "Descuentos Totales", "Salario Líquido"],
-        [nombre, apellido, cargo, sueldo, afp, isss, renta, afpPatronal, isssPatronal, isssTotal, afpTotal, totalDeductions, netSalary]
+        ["Nombre", "Apellido", "Cargo", "Sueldo", "AFP", "ISSS", "Renta", "AFP Patronal", "ISSS Patronal", "ISSS Total", "AFP Total", "Descuentos Totales", "Salario Líquido", "Sueldo Gravado"],
+        [nombre, apellido, cargo, sueldo, afp, isss, renta, afpPatronal, isssPatronal, isssTotal, afpTotal, totalDeductions, netSalary, sueldoGravado]
     ];
 
     const ws = XLSX.utils.aoa_to_sheet(ws_data);
